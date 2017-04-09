@@ -23,10 +23,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_select 'h2', 'Your Pragmatic Cart'
-
-    # TODO fix, this test returns the wrong <li> it grabs
-    # <li> from the links on the side of page
-    # assert_select 'li', 'Programmign Ruby 1.9'
+    assert_select 'td:nth-child(2)', 'Programming Ruby 1.9'
   end
 
   test "should show line_item" do
